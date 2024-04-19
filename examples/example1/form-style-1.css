@@ -1,0 +1,166 @@
+:root {
+    /*FORM TITLES COLOR*/
+    --title-main-text-color: #eee;
+    /*FORM INPUT TEXT COLOR*/
+    --input-main-text-color:#eee;
+    /*FORM BACKGROUND BACK COLOR*/
+    --background-back-color: rgba(30, 30, 35, 0.8);
+    /*FORM BACKGROUND FRONT COLOR*/
+    --background-front-color: rgba(90, 90, 95, 0.8);
+    /*FORM BACKGROUND FRONT COLOR WHEN HOVERING (USED ON BUTTONS)*/
+    --hover-background-front-color: rgba(130, 130, 135, 0.8);
+
+    /*DESCRIPTOR TEXT COLOR WHEN IT OVERLAYS INPUT FIELD*/
+    --input-descriptor-main-text-color: rgba(160, 160, 165, 0.8);
+    /*DESCRIPTOR TEXT COLOR WHEN IT IS MOVED UP*/
+    --input-descriptor-moved-text-color: green;
+    /*DESCRIPTOR BACKGROUND COLOR WHEN IT IS MOVED UP*/
+    --input-descriptor-moved-background-color: rgba(40, 40, 45, 1);
+
+    /*RADIO BUTTON COLOR WHEN HOVERED OR CHECKED*/
+    --radio-button-selection-color: green;
+
+    /*WIDTH AND HEIGHT SIZES FOR FIXED SIZE FORMS*/
+    --fixed-size-form-width: 500px;
+    --fixed-size-form-height: 350px;
+}
+
+/*USED ON ELEMENTS THAT REPRESENT TITLES WITHIN FORM LIKE
+<h1> AND SIMILAR ELEMENTS THAT ARE NOT LABELS*/
+.form-title {
+    color: var(--title-main-text-color);
+    font-family: "Play", "Jersey 25", "sans-serif";
+    margin: 5px;
+}
+
+/*SHARED STYLE FOR ALL FORMS*/
+form {
+    background-color: var(--background-back-color);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/*USED ON FORMS THAT NEED TO HAVE DEFAULT CENTERED STYLE*/
+.centered-form {
+    width: 40%;
+    margin-left: 30%;
+}
+
+/*USED ON FORMS THAT NEED TO HAVE FIXED WIDTH*/
+.fixed-width-form {
+    width: var(--fixed-size-form-width);
+}
+
+/*USED ON FORMS THAT NEED TO HAVE FIXED HEIGHT*/
+.fixed-height-form {
+    height: var(--fixed-size-form-height);
+}
+
+/*USED ON FORM INPUT FIELDS.
+FIELDS THAT ARE MARKED NEED TO HAVE 'placeholder' ATTRIBUTE SET TO " " (IN HTML FILE)*/
+.input-field {
+    background-color: var(--background-front-color);
+    border-radius: 10px;
+    border: 0px;
+    box-sizing: border-box;
+    color: var(--input-main-text-color);
+    font-size: 16px;
+    height: 40px;
+    outline: 0;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 100%;
+    font-family: "Play", "Jersey 25", "sans-serif";
+}
+
+/*USED ON LABELS THAT DESCRIBE INPUT FIELDS*/
+.input-field-descriptor {
+    font-size: 14px;
+    text-align: left;
+    display:block;
+    color: var(--input-descriptor-main-text-color);
+    font-family: "Play", "Jersey 25", "sans-serif";
+    font-weight: bold;
+    position: relative;
+    left: 0px;
+    top: 35px;
+    line-height: 12px;
+    transform-origin: 0;
+    transition: color 250ms, transform 250ms;
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 20px;
+}
+
+/*HAPPENS WHEN INPUT FIELD IS FOCUSED OR WHEN SOMETHING IS ALREADY ENTERED*/
+label:has(+ .input-field:focus), label:has(+ .input-field:not(:placeholder-shown)) {
+    transform: translateY(-25px) scale(0.9);
+    background-color: var(--input-descriptor-moved-background-color);
+    color: var(--input-descriptor-moved-text-color);
+    width: 40%;
+    line-height: 20px;
+}
+
+/*USED ON SELECT FORM ELEMENTS*/
+.select-input {
+    cursor: pointer;
+}
+
+/*USED ON RADIO BUTTON FORM ELEMENTS*/
+.radio-input {
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+}
+
+/*CUSTOM RADIO BUTTON STYLE*/
+.radio-input:before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 6px;
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 4px solid var(--background-back-color);
+    background-color: var(--background-front-color);
+}
+
+/*HAPPENS WHEN RADIO BUTTON IS HOVERED OR CHECKED*/
+.radio-input:checked:before, .radio-input:hover:before {
+    background-color: var(--radio-button-selection-color);
+}
+
+/*USED ON DIV THAT CONTAINS FORM BUTTONS*/
+.buttons-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/*STYLE FOR BUTTONS WITHIN FORM BUTTON AREA*/
+.buttons-area > button {
+    flex-grow: 1;
+    margin: 2px;
+    font-family: "Play", "Jersey 25", "sans-serif";
+    background-color: var(--background-front-color);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: var(--input-main-text-color);
+    font-size: 16px;
+    height: 40px;
+}
+
+/*HAPPENS WHEN BUTTONS WITHIN FORM BUTTON AREA ARE HOVERED*/
+.buttons-area > button:not(:disabled):hover {
+    background-color: var(--hover-background-front-color);
+    cursor: pointer;
+}
+
+/*STYLE FOR DISABLED BUTTONS WITHIN FORM BUTTON AREA*/
+.buttons-area > button:disabled {
+    opacity: 0.3;
+}

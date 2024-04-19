@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+	    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="form-style-1.css">
+
+        <style> body { text-align: center; } </style>
+    </head>
+    <body>
+        <form class="centered-form">
+            <h1 class="form-title">Example Form Title</h1>
+
+            <label for="exampleSelect" class="input-field-descriptor">Example Select</label>
+            <select id="exampleSelect" class="input-field select-input">
+                <option>Example option 1</option>
+                <option>Example option 2</option>
+                <option>Example option 3</option>
+                <option>Example option 4</option>
+            </select><br>
+
+            <label for="exampleInput1" class="input-field-descriptor">Example Input 1</label>
+            <input type="text" id="exampleInput1" class="input-field" placeholder=" "><br>
+
+            <label for="exampleInput2" class="input-field-descriptor">Example Input 2</label>
+            <input type="password" id="exampleInput2" class="input-field" placeholder=" "><br>
+
+            <label for="exampleInput3" class="input-field-descriptor">Example Input 3</label>
+            <input type="password" id="exampleInput3" class="input-field" placeholder=" "><br>
+            
+            <label for="activated" class="input-field-descriptor" >Example Choice:</label>
+            <div class="input-field">
+                <input type="radio" id="activatedYes" name="activated" value="true" class="radio-input">
+                <label for="activatedYes" >Yes</label>
+                <input checked="checked" type="radio" id="activatedNo" name="activated" value="false" class="radio-input">
+                <label for="activatedNo" >No</label><br>
+            </div>
+            <br>
+            <div class="buttons-area">
+                <button type="submit" id="button1">Button1</button>
+                <button type="submit" id="disabledButton" disabled>Disabled Button</button>
+                <button type="submit" id="button3">Button3</button>
+            </div>
+        </form>
+    </body>
+</html>
